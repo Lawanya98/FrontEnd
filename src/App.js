@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
-import Event from './Component/Pages/Event';
+import NameList from './Component/NameList';
+import Main from './Component/Main';
 
 function App() {
   return (
-<Event/>
+<Main/>
    
 
   );

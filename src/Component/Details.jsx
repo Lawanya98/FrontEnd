@@ -1,10 +1,11 @@
 import React,{Component} from 'react';
 
 
-const Payments = (props)=> {
-//const{data}=props.location.data;
-    const { name, ratings,locations, ranking} =
+const Details = (props)=> {
+    const { name, cost,details,venue,comments,notifications} =
     (props.location && props.location.data) || {};
+
+ 
 
     return (
         <div>
@@ -26,21 +27,28 @@ const Payments = (props)=> {
                     <div className="col-sm">
                         <p className="lead">
                             <div className="row">
-                                <div className="col text-center">Ratings</div>
-                                <div className="col">{ratings}</div>
+                                <div className="col text-center">Price</div>
+                                <div className="col">{cost}</div>
                             </div>
                         </p>
                         <p className="lead">
                             <div className="row">
-                                <div className="col text-center">Loaction:</div>
-                                <div className="col"> {locations}</div>
+                                <div className="col text-center">venue:</div>
+                                <div className="col"> {venue}</div>
                             </div>
 
                         </p>
                         <p className="lead">
                             <div className="row">
-                                <div className="col text-center">Ranking</div>
-                                <div className="col"> {ranking}</div>
+                                <div className="col text-center">Comments</div>
+                                <div className="col"> {comments}</div>
+                            </div>
+
+                        </p>
+                        <p className="lead">
+                            <div className="row">
+                                <div className="col text-center">Nptifications</div>
+                                <div className="col"> {comments}</div>
                             </div>
 
                         </p>
@@ -72,4 +80,4 @@ const Payments = (props)=> {
 }
 
 
-export default Payments;
+export default Details;

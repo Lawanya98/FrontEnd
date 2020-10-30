@@ -41,7 +41,7 @@ class Filter extends Component {
                     <br />
                     <br />
                     <br />
-                    <br></br>
+                
                     <b> Choose a Type:</b> &nbsp;
                     <br />
                     <br />
@@ -67,9 +67,7 @@ class Filter extends Component {
 
             <div className="restcontainer">
               {this.state.itemsToDisplay.map((item) => {
-                let locations = item["Location"]
-                  .substring(1, item["Location"].length - 2)
-                  .split(",");
+               
                 let Itemdetails = {
                   name: item["Name"],
                   ratings: item["Number of Reviews"],
@@ -95,28 +93,13 @@ class Filter extends Component {
                         <div className="itemLocation">
                           <br />
                           <b> Available Locations:</b>
-                          {locations.map((location) => {
-                            let locationToshow = location.substring(
-                              0,
-                              location.length
-                            );
-                            locationToshow = locationToshow.includes("")
-                              ? locationToshow.substring(
-                                  1,
-                                  locationToshow.length
-                                )
-                              : locationToshow;
-                            return (
-                              <div
-                                pill
-                                className="itemLocation"
-                                variant="light"
-                              >
-                                {locationToshow}
+                     
+                          <span className="itemname"> {item["Location"]}</span>
+                         
                               </div>
-                            );
-                          })}
-                        </div>
+                            
+                          
+                        
                       </Link>
                     </div>
 
@@ -157,20 +140,7 @@ class Filter extends Component {
     }
   };
 
-  optionSelected = () => {
-    var e = document.getElementById("itemfilter");
-    var selected = e.options[e.selectedIndex].text;
-
-    if (selected === "Choose Any")
-      this.setState({ itemsToDisplay: [...this.state.itemsToUse] });
-    else {
-      let itemsToDisplay = [];
-      itemsToDisplay = this.state.itemsToUse.filter((item) =>
-        item["Location"].toLowerCase().includes(selected.toLowerCase())
-      );
-      this.setState({ itemsToDisplay });
-    }
-  };
+  
   searchSpace = (event) => {
     let keyword = event.target.value;
     this.setState({ search: keyword });
@@ -191,23 +161,16 @@ class Filter extends Component {
   }
 
   reRenderList() {
-    var locations = [];
+    
     var itemsToDisplay = [];
     for (var i = 0; i < data.length; i++) {
       itemsToDisplay.push(data[i]);
-      data[i]["Location"]
-        .substring(1, data[i]["Location"].length - 2)
-        .split(",")
-        .forEach((location) => {
-          let c = location.substring(1, location.length);
-
-          if (locations.indexOf(c) < 0) {
-            locations.push(c);
-          }
-        });
+      
+        
+        
     }
 
-    this.setState({ locations });
+  
 
     this.setState({ itemsToDisplay }, () => {
       this.setState({ itemsToUse: [...this.state.itemsToDisplay] });
