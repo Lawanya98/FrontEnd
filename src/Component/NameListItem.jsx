@@ -9,34 +9,37 @@ import './NameListItem.css';
 const NameListItem =(props)=> {
     let itemdetail =  {
                     
-         name :props.eventName,
-         cost :props.price,
-         details :props.otherDetails,
+         name :props.name,
+         cost :props.cost,
+         details :props.details,
          venue :props.venue,
          comments :props.comments,
          notifications :props.notifications,
                        
         };
-        let togglePersonsHandler = () => {
-            console.log(itemdetail.name);
-            console.log(itemdetail.comments);
-        }
+        
     
     
     
     return (
-       
+      
+       <div>
+           
         <ul>
-            <li className="list-group-item shadow-sm">
-                <div className="row align-items-center">
-                    <div className="col-3">
-
-                    </div>
-                    <div className="col-9">
-                        <div className="card">
-                            <Link
+              <div className="card" style={{backgroundColor: '#597C2B'}}></div>
+            <li className="list-group-item shadow-sm" style={{backgroundColor: '#06466e'}}>
+            <Link
                                 to={{ pathname: "/eventdetails", data:itemdetail}}
-                                className="link textdec"  onClick={togglePersonsHandler}>
+                                className="link textdec" >
+                <div className="row align-items-center" style={{backgroundColor:'#06466e'}}>
+                    <div className="col-6">
+                        <div className="card" style={{height:'15rem', width:'20rem'}}>
+                        <img src="https://www.srilankadaytours.com/images/MUTHURAJAWELA/vsig_images/20140702_102433_687_412_72.jpg" alt="profile"/>
+                        </div>
+                    </div>
+                    <div className="col-6">
+                        <div className="card" style={{backgroundColor:'gold'}}>
+                           
 
                                 <h4> {props.name}</h4>
 
@@ -45,14 +48,20 @@ const NameListItem =(props)=> {
                                 <p>Details :{props.details}</p>
                                 <p>venue:{props.venue}</p>
                                 
-                            </Link>
+                           
                         </div>
 
                     </div>
                 </div>
-
+                </Link>
             </li>
+            <br/>
         </ul>
+      <br/>
+      </div>
+     
+     
+      
 
     );
 
