@@ -1,0 +1,27 @@
+.hotelresult-tableName{
+    width: 15%;
+}
+
+.hotelresult-tableGuests{
+    width: 7%;
+}
+
+.hotelresult-tableSpecs{
+    width: 40%;
+}
+
+.hotelresult-tablePrice{
+    width: 10%;
+}
+
+.hotelresult-a{
+    width: 11%;
+}
+
+.hotelresult-b{
+    align-content: center;
+}
+
+
+/*background-attachment: fixed;
+background-size: cover;*/
